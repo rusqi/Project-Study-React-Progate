@@ -1,10 +1,9 @@
 import React from 'react';
-import Language from './';
+import Language from './Language';
 
 class App extends React.Component {
   render() {
-    // Tempelkan code yang disediakan di jendela instruksi ke bawah baris ini 
-const languageList = [
+    const languageList = [
       {
         name: 'HTML & CSS',
         image: 'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/react/html.svg'
@@ -35,19 +34,15 @@ const languageList = [
       <div>
         <h1>List of Language</h1>
         <div className='language'>
-          {/* hapus code dari sini */}
-          {/* Sampai sini */}
-          {/* Gunakan method map untuk mendisplay component Language */}
-          {languageList.map((languageItem) => {
+          {languageList.map((languageItem, index) => {
             return (
-              // Panggil component Language dan teruskan props ke component tersebut
               <Language
-              name = {languageItem.name}
-              image = {languageItem.image}
+                key={index}
+                name={languageItem.name}
+                image={languageItem.image}
               />
             )
           })}
-          
         </div>
       </div>
     );

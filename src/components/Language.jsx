@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Language extends React.Component {
   render() {
@@ -13,5 +14,10 @@ class Language extends React.Component {
     );
   }
 }
+
+Language.propTypes = {
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired
+};
 
 export default Language;
